@@ -3,6 +3,7 @@ import { Alert } from 'react-native';
 import { View, Text, StyleSheet, Pressable, TextInput } from 'react-native'
 // import IconSetting from './IconSetting';
 import { AntDesign } from '@expo/vector-icons';
+import RedditList from './RedditList';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,6 +64,7 @@ export default function App() {
 
       <TextInput onChangeText={setText} value={text} style={styles.input} placeholder='type here' placeholderTextColor="gray" />
       <Text>{text}</Text>
+      <RedditList />
     </View >
   )
 }
