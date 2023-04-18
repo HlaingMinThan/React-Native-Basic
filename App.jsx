@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Alert } from 'react-native';
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Pressable, TextInput } from 'react-native'
 // import IconSetting from './IconSetting';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -21,7 +21,14 @@ const styles = StyleSheet.create({
   btnText: {
     color: 'white',
     marginLeft: 6
-  }
+  },
+  input: {
+    width: 250,
+    height: 40,
+    borderWidth: 1,
+    marginTop: 20,
+    padding: 10
+  },
 });
 
 let pressHandler = () => {
@@ -30,6 +37,7 @@ let pressHandler = () => {
 }
 
 export default function App() {
+  let [text, setText] = useState('');
   return (
     <View style={styles.container}>
       <Text>
@@ -52,6 +60,9 @@ export default function App() {
         < AntDesign name="stepforward" size={16} color="white" />
         <Text style={styles.btnText}>click here</Text>
       </Pressable>
+
+      <TextInput onChangeText={setText} value={text} style={styles.input} placeholder='type here' placeholderTextColor="gray" />
+      <Text>{text}</Text>
     </View >
   )
 }
@@ -62,3 +73,6 @@ export default function App() {
 
 //using svgs
 //convert normal svg to react expo svg using https://react-svgr.com/playground/?native=true&typescript=true
+
+//using textinput
+// React Native's text input onChangeText can only accept useState setter function directly
