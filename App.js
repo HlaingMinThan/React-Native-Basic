@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { View,Text, StyleSheet } from 'react-native'
+
+const styles = StyleSheet.create({
+  container : {
+    alignItems:"center",
+    justifyContent:"center",
+    flex:1,
+  }
+});
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>
+          hello world
+      </Text>
+      <Text>
+          hello world
+      </Text>
+      <Text>
+          hello world
+      </Text>
     </View>
-  );
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+//notes
+//react native's components has no classname props,need to handle with css module
+//react native's View component already applied display flex and default flex direction is column
