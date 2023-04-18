@@ -1,7 +1,8 @@
 import React from 'react'
 import { Alert } from 'react-native';
 import { View, Text, StyleSheet, Pressable } from 'react-native'
-import IconSetting from './IconSetting';
+// import IconSetting from './IconSetting';
+import { AntDesign } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,7 +42,8 @@ export default function App() {
       </Text>
 
       <Pressable style={styles.button} onPress={pressHandler}>
-        <IconSetting width={16} height={16} color="white"></IconSetting>
+        {/* <IconSetting width={16} height={16} color="white"></IconSetting> */}
+        <AntDesign name="stepforward" size={16} color="white" />
         <Text style={styles.btnText}>click here</Text>
       </Pressable>
     </View>
