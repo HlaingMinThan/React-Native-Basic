@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
 });
 
 let pressHandler = () => {
+  console.log('where')
   Alert.alert("hello world guys")
 }
 
@@ -41,12 +42,17 @@ export default function App() {
         hello world
       </Text>
 
-      <Pressable style={styles.button} onPress={pressHandler}>
+      <Pressable style={styles.button} onPress={pressHandler}
+        onPressIn={() => console.log('press in ')}
+        onPressOut={() => console.log('press out ')}
+        onLongPress={() => Alert.alert('long press')}
+        hitSlop={20} // more rectangle box area to click
+      >
         {/* <IconSetting width={16} height={16} color="white"></IconSetting> */}
-        <AntDesign name="stepforward" size={16} color="white" />
+        < AntDesign name="stepforward" size={16} color="white" />
         <Text style={styles.btnText}>click here</Text>
       </Pressable>
-    </View>
+    </View >
   )
 }
 //notes
